@@ -41,15 +41,5 @@ set ubuntu_mirror mirrors.aliyun.com
 set ubuntu_base_dir ubuntu
 goto custom_exit
 
-:option_two
-kernel https://boot.netboot.xyz/memdisk raw iso
-initrd http://path.to/iso
-boot || goto custom_exit
-
-:option_three
-echo Chains into another menu...
-chain https://raw.githubusercontent.com/${github_user}/netboot.xyz-custom/master/custom1.ipxe || goto custom
-
 :custom_exit
-chain utils.ipxe
-exit
+exit 0
