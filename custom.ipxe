@@ -39,6 +39,11 @@ set opensuse_base_dir opensuse/distribution/leap
 ### Ubuntu
 set ubuntu_mirror mirrors.aliyun.com
 set ubuntu_base_dir ubuntu
+
+clear menu
+echo Work Correct in Release 2.0.5. --2020.1.15
+sleep 5
+
 goto custom_exit
 
 :custom_exit
