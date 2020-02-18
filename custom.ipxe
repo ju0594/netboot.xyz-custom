@@ -19,37 +19,32 @@ goto custom_exit
 
 :option_one
 ### Alpine Linux
-set alpinelinux_mirror mirrors.aliyun.com
+set alpinelinux_mirror https://mirrors.aliyun.com
 set alpinelinux_base_dir alpine
 ### ArchLinux
-set archlinux_mirror mirrors.aliyun.com
+set archlinux_mirror https://mirrors.aliyun.com
 set archlinux_base_dir archlinux
 ### CentOS
-set centos_mirror mirrors.aliyun.com
+set centos_mirror https://mirrors.aliyun.com
 set centos_base_dir centos
 ### Debian
-set debian_mirror mirrors.aliyun.com
+set debian_mirror https://mirrors.aliyun.com
 set debian_base_dir debian
 ### Fedora
-set fedora_mirror mirrors.aliyun.com
+set fedora_mirror https://mirrors.aliyun.com
 set fedora_base_dir fedora
 ### OpenSUSE
-set opensuse_mirror mirrors.aliyun.com
+set opensuse_mirror https://mirrors.aliyun.com
 set opensuse_base_dir opensuse/distribution/leap
 ### Ubuntu
-set ubuntu_mirror mirrors.aliyun.com
+set ubuntu_mirror https://mirrors.aliyun.com
 set ubuntu_base_dir ubuntu
+
+clear menu
+echo Work Correct in Release 2.0.5. --2020.1.15
+sleep 5
+
 goto custom_exit
 
-:option_two
-kernel https://boot.netboot.xyz/memdisk raw iso
-initrd http://path.to/iso
-boot || goto custom_exit
-
-:option_three
-echo Chains into another menu...
-chain https://raw.githubusercontent.com/${github_user}/netboot.xyz-custom/master/custom1.ipxe || goto custom
-
 :custom_exit
-chain utils.ipxe
-exit
+exit 0
